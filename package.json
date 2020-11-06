@@ -1,0 +1,19 @@
+{
+  "name": "peakywebsite",
+  "version": "1.0.0",
+  "description": "Website about a tv show",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexLeka98/project_pb.git"
+  },
+  "author": "Aleksander Leka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexLeka98/project_pb/issues"
+  },
+  "homepage": "https://github.com/AlexLeka98/project_pb#readme"
+}
