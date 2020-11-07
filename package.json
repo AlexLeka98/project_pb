@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/AlexLeka98/project_pb/issues"
   },
-  "homepage": "https://github.com/AlexLeka98/project_pb#readme"
+  "homepage": "https://github.com/AlexLeka98/project_pb#readme",
+  "dependencies": {
+    "ejs-mate": "^3.0.0",
+    "express": "^4.17.1"
+  }
 }

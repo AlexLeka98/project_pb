@@ -1,0 +1,107 @@
+
+
+
+.section{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap:wrap;
+    flex-direction: row;
+    width:100%;
+    height:100%;
+    background:url("https://i.pinimg.com/564x/88/91/5c/88915cd27d3195991e0cf7a47b768955.jpg");
+    z-index: 0;
+}
+
+.section .container{
+    background: none;
+}
+
+
+
+.images{
+    border-radius: 0.3rem;
+    opacity:0.7;
+    /* transition: box-shadow 0.35s;
+    transition: transform 0.25s;
+    transition: opacity 0.25s; */
+    transform: all 0.25s;
+    -webkit-transition: all 0.25s;
+}
+
+.images:hover{
+    box-shadow: 10px 10px 40px 25px #e063636c,-10px -10px 40px 5px #06306e50;
+    opacity:1.0;
+    transform: scale(1.07,1.07);
+    cursor: pointer;
+}
+
+#one h1, #five h1 {
+    font-size:2rem;
+    margin-top:150%;
+}
+
+#two h1, #four h1 {
+    font-size:2.4rem;
+}
+
+#three h1{
+    font-size:3.7rem;
+    margin-top:90%;
+}
+
+.images h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    margin-top: 110%;
+    height:6rem;
+    text-align: center;
+    color: rgba(255, 253, 253, 0.781);
+}
+
+#one{
+    width:10%;
+    height:45%;
+    background:url("https://i.redd.it/cbptte9nnhq21.jpg");
+    background-position:100% 90%;
+    background-size:cover;
+    position:relative;
+}
+
+#two{
+    width:20%;
+    height:65%;
+    background:url("https://i.pinimg.com/564x/60/eb/e3/60ebe38a411449124e3066eb27a5a26d.jpg");
+    background-position:left;
+    background-size:cover;
+}
+/* Make random pictures come up every second */
+#three{
+    width:30%;
+    height:80%;
+    /* margin-top: 110%; */
+    /* background:url("https://assets.entrepreneur.com/content/3x2/2000/20190918135414-tommy-shelby-peaky-blinders.jpeg"); */
+    /* background:url("https://i.pinimg.com/564x/f1/d8/7a/f1d87aaaa99afe301fc380dacc7ba088.jpg"); */
+    /* background:url("https://wallpapercave.com/wp/wp1890613.jpg"); */
+    background: url("https://wallpapercave.com/wp/wp1890644.jpg");
+    background-position:50% 0;
+    background-size:cover;
+    /* background-size:cover; */
+}
+
+#four{
+    width:20%;
+    height:65%;
+    background:url("https://i.pinimg.com/originals/dd/ef/a2/ddefa226412482a198effa372f323ab2.jpg");
+    background-size:cover;
+}
+
+#five{
+    width:10%;
+    height:45%;
+    background:url("https://i.pinimg.com/originals/b0/ef/5a/b0ef5a1e710fe8bc6b6037dae2ac3029.jpg");
+    background-position:-140% 0;
+    background-size:cover;
+}
