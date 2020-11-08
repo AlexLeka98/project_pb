@@ -11,7 +11,7 @@ const navSlide = () => {
                 link.style.animation = '';
             }
             else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 3 + 0.2}s`;
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.2}s`;
             }
         });
         burger.classList.toggle('toggle');
@@ -21,3 +21,24 @@ const navSlide = () => {
 }
 
 navSlide();
+
+// var e = document.getElementById("vid");
+// e.style.opacity = 0;
+
+// var vid = document.getElementById("vid");
+// vid.oncanplaythrough = function () {
+//     setTimeout(function () {
+//         var e = document.getElementById('vid');
+//         fade(e);
+//     }, 1000);
+// };
+
+// function fade(element) {
+//     var op = 0;
+//     var timer = setInterval(function () {
+//         if (op >= 1) clearInterval(timer);
+//         element.style.opacity = op;
+//         element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+//         op += op * 0.1 || 0.1;
+//     }, 50);
+// };

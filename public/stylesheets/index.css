@@ -1,5 +1,29 @@
+*{
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Merriweather', serif;
+}
 
 
+video {
+    pointer-events:none;
+    object-fit: fill;
+}
+
+.backVideo{
+    height:92vh;
+    background-color:#000000;
+    width:100%;
+    top:8vh;
+}
+
+
+.backVideoMob{
+    height:92vh;
+    background-color:#000000;
+    width:100%;
+    top:8vh;
+
+}
 
 .section{
     display:flex;
@@ -7,24 +31,84 @@
     align-items: center;
     flex-wrap:wrap;
     flex-direction: row;
+    height:92vh;
     width:100%;
-    height:100%;
-    background:url("https://i.pinimg.com/564x/88/91/5c/88915cd27d3195991e0cf7a47b768955.jpg");
-    z-index: 0;
+    position:absolute;
 }
 
 .section .container{
+    width:100%;
     background: none;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.icons .image1{
+    width: 50px;
+    height: 50px;
+    background-image:url("/instagram.png");
+    background-size: cover;
+}
+.icons .image1:hover{
+    cursor: pointer;
+    background-image:url("/instagramHover.png");
+}
+
+.icons .image2{
+    width: 50px;
+    height: 50px;
+    margin-left:10px;
+    background-image:url("/googleplus.png");
+    background-size: cover;
+}
+.icons .image2:hover{
+    cursor: pointer;
+    background-image:url("/googleplusHover.png");
+}
+
+.icons .image3{
+    width: 50px;
+    height: 50px;
+    margin-left:10px;
+    background-image:url("/twitter.png");
+    background-size: cover;
+}
+.icons .image3:hover{
+    cursor: pointer;
+    background-image:url("/twitterHover.png");
+}
+
+
+.dline1{
+    position:absolute;
+    height:92vh;
+    width:2%;
+    left:30%;
+    background-color:rgba(255, 0, 0, 0.129);
+    z-index:2;
+}
+
+.dline2{
+    position:absolute;
+    height:92vh;
+    width:2%;
+    right:30%;
+    background-color:rgba(255, 0, 0, 0.129);
+    z-index:2;
+}
 
 
 .images{
     border-radius: 0.3rem;
     opacity:0.7;
+    display:flex;
+    justify-content:center;
+    align-items: center;
     /* transition: box-shadow 0.35s;
     transition: transform 0.25s;
     transition: opacity 0.25s; */
+
     transform: all 0.25s;
     -webkit-transition: all 0.25s;
 }
@@ -34,20 +118,23 @@
     opacity:1.0;
     transform: scale(1.07,1.07);
     cursor: pointer;
+    z-index:2;
 }
 
+
 #one h1, #five h1 {
-    font-size:2rem;
-    margin-top:150%;
+
+    font-size:2.3rem;
+    /* margin-top:150%; */
 }
 
 #two h1, #four h1 {
-    font-size:2.4rem;
+    font-size:2.9rem;
 }
 
 #three h1{
-    font-size:3.7rem;
-    margin-top:90%;
+    font-size:4.3rem;
+    margin-bottom:20%;
 }
 
 .images h1 {
@@ -59,49 +146,131 @@
     height:6rem;
     text-align: center;
     color: rgba(255, 253, 253, 0.781);
+    width:100%;
+    font-family: 'Tangerine', cursive;
 }
 
 #one{
-    width:10%;
+    width:12%;
     height:45%;
-    background:url("https://i.redd.it/cbptte9nnhq21.jpg");
-    background-position:100% 90%;
+    /* background:url("https://i.redd.it/cbptte9nnhq21.jpg"); */
+    background:url("https://i.pinimg.com/564x/8c/d6/3b/8cd63b494d86b6eb8bcfbfba5f2927b3.jpg");
     background-size:cover;
     position:relative;
+    background-position: 80% 0%;
 }
 
 #two{
-    width:20%;
-    height:65%;
+    width:17%;
+    height:55%;
     background:url("https://i.pinimg.com/564x/60/eb/e3/60ebe38a411449124e3066eb27a5a26d.jpg");
     background-position:left;
     background-size:cover;
+    background-position: 20% 0%;
 }
 /* Make random pictures come up every second */
 #three{
-    width:30%;
-    height:80%;
+    width:25%;
+    height:70%;
     /* margin-top: 110%; */
     /* background:url("https://assets.entrepreneur.com/content/3x2/2000/20190918135414-tommy-shelby-peaky-blinders.jpeg"); */
     /* background:url("https://i.pinimg.com/564x/f1/d8/7a/f1d87aaaa99afe301fc380dacc7ba088.jpg"); */
     /* background:url("https://wallpapercave.com/wp/wp1890613.jpg"); */
     background: url("https://wallpapercave.com/wp/wp1890644.jpg");
-    background-position:50% 0;
+    /* background-position:50% 0; */
     background-size:cover;
-    /* background-size:cover; */
 }
 
 #four{
-    width:20%;
-    height:65%;
+    width:17%;
+    height:55%;
     background:url("https://i.pinimg.com/originals/dd/ef/a2/ddefa226412482a198effa372f323ab2.jpg");
     background-size:cover;
+    background-position: 55% 100%;
 }
 
 #five{
-    width:10%;
+    width:12%;
     height:45%;
     background:url("https://i.pinimg.com/originals/b0/ef/5a/b0ef5a1e710fe8bc6b6037dae2ac3029.jpg");
-    background-position:-140% 0;
+    /* background-position:-140% 0; */
+    background-position: 55% 100%;
     background-size:cover;
 }
+
+
+.sectionMob {
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap:wrap;
+    flex-direction: row;
+    height:92vh;
+    width:100%;
+    position:absolute;
+}
+
+
+.sectionMob .container{
+    width:100%;
+    background: none;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+@media screen and (max-width: 1050px){
+    .section .container{
+        flex-direction: column;
+    }
+    #one{
+        width: 46%;
+        height:11%;
+        background-position: 0 23%;
+    }
+    #two{
+        width: 68%;
+        height:13%;
+        background-position: 0 27%;
+    }
+    #three{
+        width: 90%;
+        height:16%;
+        background-position: 0 40%;
+    }
+    #four{
+        width: 68%;
+        height:13%;
+        background-position: 0 28%;
+    }
+    #five{
+        width: 46%;
+        height:11%;
+        background-position: 0 40%;
+    }
+    .images h1{
+        margin:0;
+    }
+    #three h1{
+        margin-bottom:0;
+    }
+    .dline2{
+        display:none;
+    }
+    .dline1{
+        left:50%;
+    }
+}
+
+
+/* @media screen and (max-width: 1610px){
+    .backVideo{
+        display:none;
+    }
+    .backVideoMob{
+        display:block;
+    }
+} */
