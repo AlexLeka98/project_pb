@@ -61,7 +61,7 @@ body {
     text-decoration: none;
     letter-spacing:3px;
     font-weight: bold;
-    font-size:0.9rem;
+    font-size:1.1rem;
     transition: all 0.1s ease-in;
 }
 
@@ -75,7 +75,7 @@ body {
 
 .nav-links li{
     flex-grow: 1;
-    width:100px;
+    /* width:100px; */
     align-self: center;
 }
 
@@ -86,7 +86,7 @@ body {
 
 
 .nav-links #empty{
-    flex-grow:5;
+    flex-grow:1;
 }
 
 /* .nav-links a:target{

@@ -89,6 +89,7 @@ video {
     z-index:2;
 }
 
+
 .dline2{
     position:absolute;
     height:92vh;
@@ -97,6 +98,7 @@ video {
     background-color:rgba(255, 0, 0, 0.129);
     z-index:2;
 }
+
 
 
 .images{
