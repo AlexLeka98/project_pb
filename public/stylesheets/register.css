@@ -1,12 +1,63 @@
-.container{
-    height:100%;
+
+form {
+    height:92vh;
+    width:100%;
     display: flex;
     justify-content:center;
     align-items: center;
+    background-image: url("https://wallpapercave.com/wp/wp1890589.jpg");
 }
 
-.container h1{
-    font-size: 16rem;
-    color:#fff;
-    font-family: 'Tangerine', cursive;
+form .formElements{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    height:50%;
+    width:50%;
+    background-color:#d084848c;
+}
+
+
+form .formElements input {
+    box-sizing:border-box;
+    width:40%;
+    height:15%;
+    margin:5px;
+    font-size: 1.2rem;
+    padding-left:25px;
+    border-radius: 5px;
+}
+
+form .formElements button {
+    width:30%;
+    height:13%;
+    margin:5px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border:3px solid #7e6b6b;
+    color:#7e6b6b;
+    background-color:#282828;
+}
+
+form .formElements button:hover {
+    cursor: pointer;
+    background-color:#7e6b6b;
+    color:#282828;
+    border-color:#282828;
+}
+
+form .formElements button:focus {
+    cursor: pointer;
+    background-color:#7e6b6b;
+    color:#282828;
+    border-color:#282828;
+}
+
+form .formElements button:active {
+    cursor: pointer;
+    background-color:#a97171;
+    color:#282828;
 }

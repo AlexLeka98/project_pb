@@ -1,6 +1,10 @@
 <%= layout('layouts/boilerplate') %>
 <link rel="stylesheet" href="/stylesheets/login.css">
 
-<div class="container">
-    <h1>Login</h1>
-</div>
+<form action="/login" method="POST" novalidate>
+    <div class="formElements">
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button>Login</button>
+    </div>
+</form>
