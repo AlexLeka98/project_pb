@@ -56,6 +56,13 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
+app.use((req, res, next) => {
+    console.log(req.session);
+    res.locals.currentUser = req.user;
+    next();
+})
+
+
 app.get('/fakeuser', async (req, res) => {
     const user = new User({ email: 'alexxx@gmail.com', username: 'Alekos' });
     const newUser = await User.register(user, 'chicken');
@@ -72,7 +79,7 @@ app.get('/seasons', (req, res) => {
     res.render("seasons");
 });
 
-app.get('/gallery', (req, res) => {
+app.get('/gallery', isLoggedIn, (req, res) => {
     res.render("gallery");
 });
 
@@ -88,9 +95,12 @@ app.post('/register', async (req, res) => {
     try {
         const { email, username, password } = req.body;
         const user = new User({ email, username });
-        await User.register(user, password);
-        // req.flash('error', 'You are now a peaky blinder.');
-        req.redirect('/');
+        const registeredUser = await User.register(user, password);
+        req.login(registeredUser, err => {
+            if (err) return next(err);
+            // req.flash('error', 'You are now a peaky blinder.');
+            req.redirect('/');
+        });
     }
     catch (e) {
         // req.flash('error', e.message);
@@ -104,13 +114,13 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login', passport.authenticate('local', { failureRedirect: '/login' }), async (req, res) => {
-    console.log(req.body);
-    res.send('You succesfully logged in');
+    const redirectUrl = req.session.returnTo || '/';
+    delete req.session.returnTo;
+    res.redirect(redirectUrl);
 })
 
 app.get('/logout', isLoggedIn, (req, res) => {
     req.logout();
-    console.log('You are now logged out!');
     res.redirect('/');
 })
 

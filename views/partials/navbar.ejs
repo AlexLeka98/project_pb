@@ -11,8 +11,12 @@
         <li><a href="/gallery">Gallery</a></li>
         <li><a href="/cast_crew">Cast & Crew</a></li>
         <li id="empty"></li>
+        <% if(!currentUser) { %>
         <li><a href="/login">Login</a></li>
         <li><a href="/register">Register</a></li>
+        <% } else {%>
+        <li style="margin-left:0;"><a href="/logout">Logout</a></li>
+        <% } %>
     </ul>
 
     <div class="burger">
