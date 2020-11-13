@@ -2,13 +2,13 @@ const express = require('express');
 const app = express();
 const ejsMate = require('ejs-mate');
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 const session = require('express-session');
 const passport = require('passport');
 const localStrategy = require('passport-local');
-const methodOverride = require('method-override');
+// const catchAsync = require('./utils/catchAsync');
+const { isLoggedIn } = require('./middleware');
 const User = require('./models/user');
-
-
 
 const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/peakydb";
 mongoose.connect(dbUrl, {
@@ -56,6 +56,12 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
+app.get('/fakeuser', async (req, res) => {
+    const user = new User({ email: 'alexxx@gmail.com', username: 'Alekos' });
+    const newUser = await User.register(user, 'chicken');
+    res.send(newUser);
+})
+
 
 
 app.get('/', (req, res) => {
@@ -74,16 +80,6 @@ app.get('/cast_crew', (req, res) => {
     res.render("cast_crew");
 });
 
-app.get('/login', (req, res) => {
-    res.render("login");
-});
-
-
-//Never secceeds to authenticate.
-app.post('/login', passport.authenticate('local', { failureRedirect: '/login' }), async (req, res) => {
-    res.redirect('/');
-});
-
 app.get('/register', (req, res) => {
     res.render("register");
 });
@@ -92,7 +88,7 @@ app.post('/register', async (req, res) => {
     try {
         const { email, username, password } = req.body;
         const user = new User({ email, username });
-        const registeredUser = await User.register(user, password);
+        await User.register(user, password);
         // req.flash('error', 'You are now a peaky blinder.');
         req.redirect('/');
     }
@@ -101,6 +97,23 @@ app.post('/register', async (req, res) => {
         res.redirect('/');
     }
 });
+
+
+app.get('/login', (req, res) => {
+    res.render("login");
+});
+
+app.post('/login', passport.authenticate('local', { failureRedirect: '/login' }), async (req, res) => {
+    console.log(req.body);
+    res.send('You succesfully logged in');
+})
+
+app.get('/logout', isLoggedIn, (req, res) => {
+    req.logout();
+    console.log('You are now logged out!');
+    res.redirect('/');
+})
+
 
 app.listen(3000, () => {
     console.log(`Server on port 3000`);

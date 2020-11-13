@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const passportLocalMongoose = require('passport-local-mongoose');
 
 const userSchema = new Schema({
-    // Just specify email. Not passport and username. The below plugin does it for me.
+    //You dont have to add any other information.
     email: {
         type: String,
         required: true,
@@ -11,8 +11,9 @@ const userSchema = new Schema({
     }
 });
 
-/* Also makes sure that the usernames are unique and not doublicated,
-   it also adds some additional helpful functions */
+//This is going to add our schema a username, a field for passwords
+// its going to make sure that those passwords are unique, it will also
+// give us aditional functions.
 userSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model('User', userSchema);
